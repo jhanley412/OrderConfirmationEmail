@@ -1,0 +1,217 @@
+<mjml>
+    <mj-head>
+        <mj-raw>
+            {baseURL = "https://staging-web-sheplers.demandware.net/s/country_outfitters_us/"}
+        </mj-raw>
+        <mj-style>
+        @media all and (max-width: 480px) {
+          div {
+            text-align: center !important
+          }
+        }
+        </mj-style>
+        <mj-style inline="inline">
+        a {
+          color: inherit;
+          text-decoration: underline;
+          font-weight:bold;
+        }
+        .bodytextbold {
+            font-weight:bold;
+        }
+        </mj-style>
+    </mj-head>
+  <mj-body>
+
+    <mj-container background-color="#ffffff">
+
+      <mj-section  full-width="full-width" padding-bottom="0" padding-top="0" background-color="#000000">
+        <mj-column vertical-align="middle" width="66.66666666666666%">
+          <mj-text align="left" color="#ffffff" font-family="Verdana, Geneva, sans-serif" vertical-align="middle" padding-left="25" padding-right="25" padding-bottom="0" padding-top="0">
+            <span style="font-size:11px">Order has been placed!</span>
+          </mj-text>
+        </mj-column>
+        <mj-column vertical-align="middle" width="33.33333333333333%">
+          <mj-text align="right" color="#ffffff" font-family="Verdana, Geneva, sans-serif" vertical-align="middle" padding-left="25" padding-right="25" padding-bottom="0" padding-top="0">
+            <span style="font-size: 11px"><a href="{view_url}" target="_blank" style="color:#ffffff">View this online</a></span>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+        <!--- main header logo --->
+        <mj-section padding-top="0" padding-bottom="0">
+            <mj-column vertical-align="top" width="100%">
+              <mj-image  href="{baseURL}" src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-logo.png" alt="CountryOutfitter.com" align="center" border="none" width="172" height="92" vertical-align="top" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0">
+              </mj-image>
+            </mj-column>
+        </mj-section>
+        <mj-navbar full-width="full-width" padding-top="0" padding-bottom="0" padding-left="0" padding-right="0">
+            <mj-column vertical-align="top" width="100%">
+            <mj-divider border-width="2px" border-color="#616161" padding-top="0" padding-bottom="0"/>
+             <mj-inline-links base-url="http://www.countryoutfitter.com/" hamburger="hamburger" ico-color="#444">
+               <mj-link href="http://www.countryoutfitter.com/cowgirl-boots.html" font-weight="bold">Women's</mj-link>
+               <mj-link href="http://www.countryoutfitter.com/mens-cowboy-boots.html" font-weight="bold">Men's</mj-link>
+               <mj-link href="http://www.countryoutfitter.com/brands.html" font-weight="bold">Brands</mj-link>
+               <mj-link href="http://www.countryoutfitter.com/sale/womens-on-sale/boot-shoes-on-sale/" font-weight="bold">Sale</mj-link>
+             </mj-inline-links>
+             <mj-divider border-width="2px" border-color="#616161" padding-top="0" padding-bottom="0"/>
+             <mj-spacer height="10px" />
+            </mj-column>
+        </mj-navbar>
+
+<!--- body of the email --->
+        <mj-section background-url="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-bg.png" vertical-align="middle"  background-repeat="no-repeat">
+            <mj-column vertical-align="top" width="80%">
+                  <mj-image src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-order-placed.png" alt="Your order has been placed!" align="center" border="none" height="88" width="330" vertical-align="top" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0"></mj-image>
+                  <mj-spacer height="10px" />
+                  <mj-text padding-left="0" padding-right="0" letter-spacing="1.5px"  align="center" font-size="16px" font-weight="bold"> Hi, <span style="color: #26AEC4">{vars["fname"]}</span></mj-text>
+                  <mj-text padding-left="0" padding-right="0" letter-spacing="1.5px"  align="center" font-size="16px" font-weight="bold"> Thanks for shopping with us at Country Outfitter!</span></mj-text>
+                  <mj-text padding-left="0" padding-right="0" letter-spacing="1.5px"  align="center" font-size="16px" font-weight="bold"> Be on the lookout for an email with tracking information that will be sent when your order is shipped.</span></mj-text>
+                  <mj-spacer height="10px" />
+
+            </mj-column>
+        </mj-section>
+        <mj-section  full-width="full-width" padding-bottom="0" padding-top="0" background-color="#000000">
+                    <mj-column vertical-align="top" width="100%">
+                      <mj-text font-weight="bold" font-size="18px" color="#ffffff" align="center" letter-spacing="2px" text-transform="uppercase" >Order&nbsp; Details&nbsp; Below</mj-text>
+                    </mj-column>
+        </mj-section>
+
+        <mj-section background-color="#ffffff" padding-top="0">
+            <mj-column>
+                <mj-image padding-top="0"  src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-down-arrow.png" width="34"></mj-image>
+            </mj-column>
+        </mj-section>
+
+        <mj-section background-color="#ffffff">
+            <mj-column width="50%">
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" font-weight="bold" text-transform="uppercase"> Shipping Information:</mj-text>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" text-transform="uppercase"> Shipping Method:</mj-text>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px"> {vars["shipMethod"]} </mj-text>
+
+                <mj-spacer height="10px" />
+            </mj-column>
+            <mj-column width="50%">
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" font-weight="bold" text-transform="uppercase"> Delivery Address:</mj-text>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px"> {vars["fname"]} {vars["lname"]} </mj-text>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px"> {vars["shipaddress1"]} </mj-text>
+                <mj-raw>{if vars["shipaddress2"]}</mj-raw>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px"> {vars["shipaddress2"]} </mj-text>
+                <mj-raw>{/if}</mj-raw>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px"> {vars["shipcity"]}, {vars["shipstate"]} {vars["shipzip"]} {vars["shipcountry"]} </mj-text>
+
+                <mj-spacer height="10px" />
+            </mj-column>
+        </mj-section>
+
+        <mj-section background-color="#ffffff">
+            <mj-column>
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" font-weight="bold" text-transform="uppercase"> Order Details:</mj-text>
+                <mj-divider border-width="4px" border-color="#000000" padding="0px 0px" class="neworderrow"/>
+            </mj-column>
+        </mj-section>
+        <mj-raw>{foreach items as p}</mj-raw>
+        <mj-section background-color="#ffffff" class="orderitem">
+                    <mj-column width="200">
+                        <mj-image  href="{p.url}" src="{p.imageurl}" width="200"></mj-image>
+                    </mj-column>
+                    <mj-column>
+                        <mj-text padding-left="0" padding-right="0" letter-spacing="1.1px"  font-size="19px" font-weight="bold" text-transform="uppercase"> {p.brand} <a href="{p.url}" style="color:#000000"> {p.title}</a> </mj-text>
+                        <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> Quantity: 1 </mj-text>
+                        <mj-raw>{if p.Size}</mj-raw>
+                        <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> Size: {p.Size} </mj-text>
+                        <mj-raw>{/if}</mj-raw>
+                        <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> Price: ${number(p.price/100,2)} </mj-text>
+                    </mj-column>
+        </mj-section>
+        <mj-section background-color="#ffffff">
+                    <mj-column>
+                        <mj-divider border-width="4px" border-color="#000000" padding="0px 0px" class="neworderrow"/>
+                    </mj-column>
+        </mj-section>
+        <mj-raw>{/foreach}</mj-raw>
+        <!--- TEST ITEM
+        <mj-section background-color="#ffffff" class="orderitem">
+                            <mj-column width="200">
+                                <mj-image src="http://www.countryoutfitter.com/dw/image/v2/BBCT_PRD/on/demandware.static/-/Sites-master-product-catalog-shp/default/dw9490cca0/images/U36/356U36_01_P1.JPG?sw=290&sh=290&sm=fit" width="200"></mj-image>
+                            </mj-column>
+                            <mj-column>
+                                <mj-text padding-left="0" padding-right="0" letter-spacing="1.1px"  font-size="19px" font-weight="bold" text-transform="uppercase"> <a href="http://www.countryoutfitter.com/ariat-caballera-cowgirl-boots---wide-square-toe/031459.html">Ariat Caballera Cowgirl Boots - Wide Square Toe</a> </mj-text>
+                                <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> Quantity: 1 </mj-text>
+                                <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> Price: $106.50 </mj-text>
+                            </mj-column>
+        </mj-section>
+        <mj-section background-color="#ffffff">
+                    <mj-column>
+                        <mj-divider border-width="4px" border-color="#000000" padding="0px 0px" class="endorderdetails"/>
+                    </mj-column>
+        </mj-section>
+        END TEST ITEM --->
+        <mj-section background-color="#ffffff">
+            <mj-column width="50%">
+                <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" font-weight="bold" text-transform="uppercase"> Order Summary:</mj-text>
+            </mj-column>
+            <mj-column width="50%">
+                    <mj-raw>{if vars["discount"]}</mj-raw>
+                    <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px">Discount: ${number(vars["discount"]/100,2)}</mj-text>
+                    <mj-raw>{/if}</mj-raw>
+                    <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px">Subtotal: {vars["subTotal"]}</mj-text>
+                    <mj-raw>{if (vars["taxTotal"] != "$0.00")}</mj-raw>
+                    <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px">Taxes: {vars["taxTotal"]}</mj-text>
+                    <mj-raw>{/if}</mj-raw>
+                    <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px">Shipping & Handling: {if (vars["shippingTotal"] == "$0.00")} FREE {else} {vars["shippingTotal"]} {/if} </mj-text>
+                    <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" font-weight="bold">Order Total:  {vars["grandTotal"]} </mj-text>
+             </mj-column>
+        </mj-section>
+        <mj-section background-color="#ffffff">
+                     <mj-column>
+                         <mj-divider border-width="4px" border-color="#000000" padding="0px 0px" class="endorderdetails"/>
+                     </mj-column>
+         </mj-section>
+
+        <mj-section full-width="full-width">
+            <mj-column >
+                <mj-text  padding-left="0" padding-right="0" letter-spacing="1.1px" font-size="15px" align="center" >Please don't hesitate to contact us if you have any questions or concerns at <a href="tel:1-866-824-7970" style="color:#000000">1-866-824-7970</a> or <a href="mailto:service@countryoutfitter.com" style="color:#000000">service@countryoutfitter.com</a></mj-text>
+                <mj-image src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-thanks.png" alt="Thanks!" align="center" border="none" width="172" height="61" vertical-align="top" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0"> </mj-image>
+                <mj-text  padding-left="0" padding-right="0" letter-spacing="2px" font-size="15px" align="center" >The Country Outfitter Team</mj-text>
+            </mj-column>
+        </mj-section>
+
+
+<!--- FOOTER --->
+        <mj-section full-width="full-width">
+            <mj-column width="100%">
+                <mj-divider border-width="4px" border-color="#000000" padding="0px 0px"/>
+                <mj-text  padding-left="0" padding-right="0" letter-spacing="2px" font-weight="bold" align="center" text-transform="uppercase" >Let's keep in touch!</mj-text>
+                <mj-text  padding-left="0" padding-right="0" letter-spacing="2px"  align="center" text-transform="uppercase" >Follow us @ </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section padding="0 30%" >
+            <mj-column width="30%">
+                <mj-image href="https://www.facebook.com/CountryOutfitter/" src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-social-fb.png" alt="Facebook" align="center" border="none" width="33" height="32" vertical-align="top" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0"> </mj-image>
+            </mj-column>
+            <mj-column width="30%">
+                <mj-image href="https://www.instagram.com/countryoutfitter/" src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-social-ig.png" alt="Facebook" align="center" border="none" width="33" height="32" vertical-align="top" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0"> </mj-image>
+            </mj-column>
+            <mj-column width="30%">
+                <mj-image href="https://twitter.com/CountryOutfittr" src="https://d3sj0du91ekqdx.cloudfront.net/Newsletter/tmail/tmail-social-tw.png" alt="Facebook" align="center" border="none" width="32" height="32" vertical-align="top" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0"> </mj-image>
+            </mj-column>
+        </mj-section>
+        <mj-section full-width="full-width">
+                    <mj-column>
+                        <mj-text  padding-left="0" padding-right="0" letter-spacing="2px" font-weight="bold" align="center" >Can't see images? <a href="{view_url}" target="_blank" style="color:#000000">Click here</a></mj-text>
+                        <mj-text  padding-left="0" padding-right="0" letter-spacing="2px"  align="center"  >This email was sent to: {email}</mj-text>
+                        <mj-text  padding-left="0" padding-right="0" letter-spacing="2px"  align="center"  >This email was sent by:</mj-text>
+                        <mj-text  padding-left="0" padding-right="0" letter-spacing="2px" font-weight="bold" align="center" padding="0 0" >Country Outfitter &copy;</mj-text>
+                        <mj-text  padding-left="0" padding-right="0" letter-spacing="2px"  align="center" padding="0 0" >6501 W Kellogg, Wichita, KS 67209, USA</mj-text>
+                        <mj-text  padding-left="0" padding-right="0" letter-spacing="2px"  align="center" padding="0 0" ><a href="tel:1-866-824-7970" style="color:#000000">1-866-824-7970</a></mj-text>
+                    </mj-column>
+        </mj-section>
+        <mj-section full-width="full-width">
+                            <mj-column>
+                                <mj-text  padding-left="0" padding-right="0" letter-spacing="2px" align="center" >If you believe this has been sent to you in error, please safely <a href="{optout_confirm_url}" style="color:#000000">unsubscribe</a> </mj-text>
+                                <mj-raw><div align="center">{beacon}</div></mj-raw>
+                            </mj-column>
+                </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>
