@@ -63,3 +63,4 @@ typings/
 *.png
 
 *.html
+.idea/
