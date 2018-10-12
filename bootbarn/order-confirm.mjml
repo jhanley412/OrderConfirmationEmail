@@ -1,21 +1,5 @@
 <mjml>
-  <mj-head>
-      <mj-style>
-        .icon-disabled{
-            filter: invert(94%) sepia(15%) saturate(101%) hue-rotate(3deg) brightness(95%) contrast(89%);
-        }
-        .barprogress{
-                    background-color:#ffffff;
-                    background-repeat: no-repeat;
-                    background-image:url('h-line.png');
-                    background-size: 53%;
-                    background-position: center;
-
-         }
-
-      </mj-style>
-  </mj-head>
-  <mj-body background-color="#301708" font-size="13px">
+  <mj-body background-color="#fffff" font-size="13px">
   <mj-wrapper border="1px solid #000" padding="0px">
     <mj-section background-color="#fff" padding-bottom="10px" padding-top="10px" border-top="10px solid #e3dfd6" border-bottom="2px solid #000">
       <mj-column width="50%">
@@ -25,58 +9,54 @@
     <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
       <mj-column width="90%">
               <mj-text font-size="13px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
-                <p style="font-size:16px;">Hi [[FirstName]] [[LastName]]</p>
+                <p style="font-size:16px;">Hi {{FirstName}} {{LastName}}</p>
                 <p style="font-size:16px;">Thank you for your order!</p>
                 <p style="font-size:16px;">We'll follow up with another email once your items have shipped. Thank you for shopping with us!</p>
               </mj-text>
       </mj-column>
     </mj-section>
-    <mj-section css-class="barprogress" >
-        <mj-column>&nbsp; </mj-column>
-        <mj-column>    <mj-image alt="Order Placed" width="50px" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptLTEuMjUgMTcuMjkybC00LjUtNC4zNjQgMS44NTctMS44NTggMi42NDMgMi41MDYgNS42NDMtNS43ODQgMS44NTcgMS44NTctNy41IDcuNjQzeiIvPjwvc3ZnPg=="/></mj-column>
-        <mj-column> </mj-column>
-        <mj-column>    <mj-image alt="Not Yet Shipped" width="50px" css-class="icon-disabled" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIvPjwvc3ZnPg=="/></mj-column>
-        <mj-column> </mj-column>
-        <mj-column>    <mj-image alt="Not Yet Delivered" width="50px" css-class="icon-disabled" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIvPjwvc3ZnPg=="/></mj-column>
-        <mj-column>&nbsp; </mj-column>
+    <mj-section >
+        <mj-column width="60%">
+            <mj-image alt="Order Placed" width="800px" src="data:image/png;base64,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"/>
+        </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
           <mj-column width="90%">
-                  <mj-text text-transform="uppercase" align="center" font-size="18px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
-                    Order Summary
+                  <mj-text text-transform="uppercase" align="center" font-size="18px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" letter-spacing="1px" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
+                    Order &nbsp; Summary
                   </mj-text>
           </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
               <mj-column width="90%"  border-top="2px solid #e3dfd6" border-bottom="2px solid #e3dfd6">
                       <mj-text align="center" font-size="16px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px" >
-                        <p style="font-size:16px;">Order Number: [[Order Number]]</p>
+                        <p style="font-size:16px;">Order Number: {{Order Number}}</p>
                       </mj-text>
               </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="10px">
-                  <mj-column width="40%" vertical-align="top">
+                  <mj-column width="40%" vertical-align="top" padding-bottom="20px">
                           <mj-text font-size="14px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px" >
-                            <mj-text font-weight="bold" font-size="16px">Ship To:</mj-text>
-                            <p>
+                            <div style="font-weight:bold"><mj-text font-weight="400" font-size="16px">Ship To:</mj-text></div>
+                            <div>
                             Trishan Singh<br/>
                             BootBarn<br/>
                             3211 Internet Blvd<br/>
                             STE 300<br/>
                             Frisco, TX 75034 USA<br/>
-                            </p>
+                            </div>
                           </mj-text>
                   </mj-column>
-                  <mj-column width="40%" vertical-align="top">
+                  <mj-column width="40%" vertical-align="top" padding-bottom="20px">
                           <mj-text font-size="14px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px" >
-                              <mj-text font-weight="bold" font-size="16px">Bill To:</mj-text>
-                              <p>
-                              Trishan Singh<br/>
-                              BootBarn<br/>
-                              3211 Internet Blvd<br/>
-                              STE 300<br/>
-                              Frisco, TX 75034 USA<br/>
-                              </p>
+                            <div style="font-weight:bold"><mj-text font-weight="400" font-size="16px">Bill To:</mj-text></div>
+                            <div>
+                            Trishan Singh<br/>
+                            BootBarn<br/>
+                            3211 Internet Blvd<br/>
+                            STE 300<br/>
+                            Frisco, TX 75034 USA<br/>
+                            </div>
                           </mj-text>
                   </mj-column>
     </mj-section>
@@ -84,123 +64,130 @@
                         <mj-column width="200px">
                             <mj-image  href="{p.url}" src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="200px"></mj-image>
                         </mj-column>
-                        <mj-column>
+                        <mj-column padding-left="10px" padding-right="10px">
                             <mj-text padding-left="0" padding-right="0" letter-spacing="1.1px"  font-size="14px" font-weight="bold" text-transform="uppercase"> Tony Lama Men's Vintage Full Quill Ostrich Boots - Medium Toe </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase" color="#a0a0a0"> Style: 097653234567 </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase"> Size: {p.Size} </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase"> Color: {p.Color} </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase"> Qty: 1 </mj-text>
+                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px">
+                                <div>
+                                    <span style="text-transform:uppercase;color:#a0a0a0">Style: 097653234567 </span><br/>
+                                    Size: {{item.Size}} <br/>
+                                    Color: {{item.Color}} <br/>
+                                    Qty: 1
+                                </div>
+                            </mj-text>
                         </mj-column>
-                        <mj-column width="100px">
+                        <mj-column width="100px" padding-left="10px" padding-right="10px">
                             <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> $165.99 </mj-text>
-                        </mj-column>
-    </mj-section>
-    <mj-section background-color="#ffffff">
-                        <mj-column>
-                            <mj-divider border-width="4px" border-color="#000000" padding="0px 0px"/>
                         </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff">
                         <mj-column width="200px">
                             <mj-image  href="{p.url}" src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="200px"></mj-image>
                         </mj-column>
-                        <mj-column>
+                        <mj-column padding-left="10px" padding-right="10px">
                             <mj-text padding-left="0" padding-right="0" letter-spacing="1.1px"  font-size="14px" font-weight="bold" text-transform="uppercase"> Tony Lama Men's Vintage Full Quill Ostrich Boots - Medium Toe </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase" color="#a0a0a0"> Style: 097653234567 </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase"> Size: {p.Size} </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase"> Color: {p.Color} </mj-text>
-                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px" text-transform="uppercase"> Qty: 1 </mj-text>
+                            <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="12px">
+                                <div>
+                                    <span style="text-transform:uppercase;color:#a0a0a0">Style: 097653234567 </span><br/>
+                                    Size: {{item.Size}} <br/>
+                                    Color: {{item.Color}} <br/>
+                                    Qty: 1
+                                </div>
+                            </mj-text>
                         </mj-column>
-                        <mj-column width="100px">
+                        <mj-column width="100px" padding-left="10px" padding-right="10px">
                             <mj-text padding-left="0" padding-right="0" letter-spacing="1px"  font-size="16px" text-transform="uppercase"> $165.99 </mj-text>
                         </mj-column>
     </mj-section>
-    <mj-section background-color="#ffffff">
-                        <mj-column>
-                            <mj-divider border-width="4px" border-color="#000000" padding="0px 0px"/>
-                        </mj-column>
-    </mj-section>
-    <mj-section background-color="#fff" padding-bottom="10px" padding-top="10px" border-top="5px solid #e3dfd6" border-bottom="2px solid #000">
+    <mj-section background-color="#ffffff" padding-bottom="10px" padding-top="10px" border-top="5px solid #e3dfd6" >
       <mj-column width="50%">
                       <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px"  font-size="19px" font-weight="bold" text-transform="uppercase"> &nbsp; </mj-text>
       </mj-column>
       <mj-column width="50%">
-        <mj-text>Subtotal : [[Subtotal]]</mj-text>
-        <mj-text>Shipping ( Ground ) : [[Shipping]]</mj-text>
-        <mj-text>Tax : [[Tax]]</mj-text>
+        <mj-text>Subtotal : {{Subtotal}}</mj-text>
+        <mj-text>Shipping ( Ground ) : {{Shipping}}</mj-text>
+        <mj-text>Tax : {{Tax}}</mj-text>
         <mj-text>Discount : - </mj-text>
-        <mj-text>Total : [[Total]]</mj-text>
+        <mj-text>Total : {{Total}}</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff">
 
-        <mj-column width="80%" >
-            <mj-text align="center" text-transform="uppercase" >You may also like</mj-text>
+        <mj-column width="80%" border="10px solid #e3dfd6" >
+            <mj-text align="center" text-transform="uppercase" >
+            <div>You may also like</div>
+            <div style="display:inline-block;width:30%;vertical-align:top">
+                        <a href="href="{{rec.url}}">
+                            <img  src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="100%"/>
+                        </a>
+                        <div style="text-align:left">{{rec.productname}}</div>
+                        <div style="text-align:left;color:red">{{p.price}}</div>
+            </div>
+            <div style="display:inline-block;width:30%;vertical-align:top">
+                        <a href="href="[[p.url]">
+                            <img  src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="100%"/>
+                        </a>
+                        <div style="text-align:left">My Product Title</div>
+                        <div style="text-align:left;color:red">$199.99</div>
+            </div>
+            <div style="display:inline-block;width:30%;vertical-align:top">
+                         <a href="href="{p.url}">
+                             <img  src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="100%"/>
+                         </a>
+                         <div style="text-align:left">My Product Title</div>
+                         <div style="text-align:left;color:red">$199.99</div>
+            </div>
+
+
+            </mj-text>
 
         </mj-column>
-        <mj-column width="30%">
-            <mj-image  href="{p.url}" src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="200px"></mj-image>
-            <mj-text>My Product Title</mj-text>
-            <mj-text>$199.99</mj-text>
-        </mj-column>
-        <mj-column width="30%">
-            <mj-image  href="{p.url}" src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="200px"></mj-image>
-            <mj-text>My Product Title</mj-text>
-            <mj-text>$199.99</mj-text>
-        </mj-column>
-        <mj-column width="30%">
-            <mj-image  href="{p.url}" src="https://d5n0lf4gshqmd.cloudfront.net/img/034B01_89_p1/200/250/i.jpg" width="200px"></mj-image>
-            <mj-text>My Product Title</mj-text>
-            <mj-text>$199.99</mj-text>
-        </mj-column>
+
     </mj-section>
 
+    <mj-section background-color="#ffffff" background-url="https://d2aovoe6slpue4.cloudfront.net/NewSite/HomePageBanners/2018_HomepageASlot_WWS.jpg">
 
-    <mj-section background-color="#356cc7" padding-bottom="0px" padding-top="0">
+            <mj-column width="80%" border="10px solid #ffffff" background-color="#ffffff"  >
+                <mj-text align="center" text-transform="uppercase" >
+                <div style="font-size:18px;font-weight:bold">B-Rewards Loyalty Program</div>
+                </mj-text>
+                <mj-text align="center">
+                <p>
+                Recieve exclusive discounts promotions and more from BootBarn<br/>
+                Get 150 pts just for signing up
+                </p>
+                </mj-text>
+
+
+                <mj-button background-color="#9b1a30" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://mjml.io" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px"
+                                          padding-top="10px">Sign In</mj-button>
+                <mj-button background-color="#9b1a30" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://mjml.io" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px"
+                                          padding-top="10px">Join Now</mj-button>
+            </mj-column>
+
+        </mj-section>
+
+
+
+    <mj-section background-color="#ffffff" padding-bottom="5px" padding-top="0">
       <mj-column width="100%">
-        <mj-text align="center" font-size="13px" color="#ABCDEA" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">HELLO
-          <p style="font-size:16px; color:white">[[FirstName]]</p>
+        <mj-divider border-color="#6c4041" border-width="2px" border-style="solid" padding-left="20px" padding-right="20px" padding-bottom="0px" padding-top="0"></mj-divider>
+        <mj-social font-size="15px" icon-size="30px" mode="horizontal">
+          <mj-social-element name="facebook" href="https://mjml.io/">
+            Facebook
+          </mj-social-element>
+          <mj-social-element name="instagram" href="https://mjml.io/">
+            Instagram
+          </mj-social-element>
+          <mj-social-element  name="twitter" href="https://mjml.io/">
+            Twitter
+          </mj-social-element>
+        </mj-social>
+        <mj-text align="center" color="#6c4041" font-size="15px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
+          <div style="font-size:15px">Thank You!</div>
+          <div style="font-size:15px"><a href="mailto:{{customerserviceemail}}">{{customerserviceemail}}</a></div>
+          <div style="font-size:15px"><a href="tel:{{customerservicephone}}">{{customerservicephone}}</a></div>
+
         </mj-text>
-      </mj-column>
-    </mj-section>
-    <mj-section background-color="#356cc7" padding-bottom="5px" padding-top="0">
-      <mj-column width="100%">
-        <mj-divider border-color="#ffffff" border-width="2px" border-style="solid" padding-left="20px" padding-right="20px" padding-bottom="0px" padding-top="0"></mj-divider>
-        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px"><span style="font-size:20px; font-weight:bold">Thank you very much for your purchase.</span>
-          <br/>
-          <span style="font-size:15px">Please find the receipt below.</span></mj-text>
-      </mj-column>
-    </mj-section>
-    <mj-section background-color="#568feb" padding-bottom="15px" padding-top="15px">
-      <mj-column>
-        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20px"><strong>Order Number</strong></mj-text>
-        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10px">[[OrderNumber]]</mj-text>
-      </mj-column>
-      <mj-column>
-        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20px"><strong>Order Date</strong></mj-text>
-        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10px">[[OrderDate]]</mj-text>
-      </mj-column>
-      <mj-column>
-        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20px"><strong>Total Price</strong></mj-text>
-        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10px">[[TotalPrice]]</mj-text>
-      </mj-column>
-    </mj-section>
-    <mj-section background-color="#356CC7" padding-bottom="20px" padding-top="20px">
-      <mj-column width="50%">
-        <mj-button background-color="#ffae00" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://mjml.io" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px"
-          padding-top="10px">Download Receipt</mj-button>
-      </mj-column>
-      <mj-column width="50%">
-        <mj-button background-color="#ffae00" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://mjml.io" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px"
-          padding-top="10px">Track My Order</mj-button>
-      </mj-column>
-    </mj-section>
-    <mj-section background-color="#356cc7" padding-bottom="5px" padding-top="0">
-      <mj-column width="100%">
-        <mj-divider border-color="#ffffff" border-width="2px" border-style="solid" padding-left="20px" padding-right="20px" padding-bottom="0px" padding-top="0"></mj-divider>
-        <mj-text align="center" color="#FFF" font-size="15px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">Best,
-          <br/>
-          <span style="font-size:15px">The [[CompanyName]] Team</span></mj-text>
       </mj-column>
     </mj-section>
   </mj-wrapper>
