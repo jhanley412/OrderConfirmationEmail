@@ -64,3 +64,4 @@ typings/
 
 *.html
 .idea/
+.DS_Store
