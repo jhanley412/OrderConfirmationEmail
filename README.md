@@ -30,9 +30,9 @@ D:\dev\red-rover> node_modules\.bin\mjml.cmd -w countryoutfitter\order-confirm.m
 ```
 
 
-#MJML4
+# MJML4
 
 To compile in mjml4 v4:
 
 ```
-mjml input.mjml -o output.html
+.\node_modlues\.bin\mjml path-to\input-template.mjml -o output.html
