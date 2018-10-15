@@ -1,7 +1,7 @@
 # red-rover
 Are you down diddy down diddy down down?
 
-To use MJML. 
+To use MJML.
 
 Install MJML using node
 ```
@@ -28,3 +28,11 @@ node_modules/.bin/mjml -w sheplers/email-template.mjml
 
 D:\dev\red-rover> node_modules\.bin\mjml.cmd -w countryoutfitter\order-confirm.mjml
 ```
+
+
+#MJML4
+
+To compile in mjml4 v4:
+
+```
+mjml input.mjml -o output.html
