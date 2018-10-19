@@ -1,17 +1,24 @@
 <mjml>
     <mj-body background-color="#ffffff" font-size="13px">
     <mj-wrapper border="1px solid #000" padding="0px">
-
+    
+        <mj-raw><div itemscope itemtype="http://schema.org/Order"></mj-raw>
         <mj-section background-color="#fff" padding-bottom="10px" padding-top="10px" >
             <mj-column width="50%">
                 <mj-image src="https://d2aovoe6slpue4.cloudfront.net/stores/bb-logo.png" alt="BootBarn.com"></mj-image>
             </mj-column>
+            <mj-raw>
+                <div itemprop="merchant" itemscope itemtype="http://schema.org/Organization">
+                    <meta itemprop="name" content="BootBarn"/>
+                </div>
+            </mj-raw>
+
         </mj-section>
 
         <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
             <mj-column width="90%" border-top="2px solid #e3dfd6">
                 <mj-text font-size="13px" color="#000000" text-transform="capitalize" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
-                <p style="font-size:16px;text-transform:capitalize;">Hi <span style="text-transform:lowercase;"> {{order.soldTo.firstName}} {{order.soldTo.lastName}} </span>,</p>
+                <p style="font-size:16px;text-transform:capitalize;"> Hi <span style="text-transform:lowercase;"> {{order.soldTo.firstName}} {{order.soldTo.lastName}} </span>,</p>
                 <p style="font-size:16px;">Thank you for your order!</p>
                 <p style="font-size:16px;">We'll follow up with another email once your items have shipped. Thank you for shopping with us!</p>
                 </mj-text>
@@ -22,6 +29,7 @@
             <mj-column width="60%">
                 <mj-image alt="Order Placed" width="800px" src="https://d1yvdgbmeqok5q.cloudfront.net/bootbarn/img/order-confirmation-email/order_placed_progress.png"/>
             </mj-column>
+            <mj-raw><link itemprop="orderStatus" href="http://schema.org/OrderProcessing"/></mj-raw>
         </mj-section>
 
         <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
@@ -37,7 +45,7 @@
                     <mj-text align="center" text-transform="capitalize" font-size="16px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
                         <p style="font-size:16px;">Order Number: {{order.orderNumber}}</p>
                     </mj-text>
-                    
+                    <mj-raw><meta itemprop="orderNumber" content="{{order.orderNumber}}"/></mj-raw>
             </mj-column>
         </mj-section>
 
@@ -51,6 +59,18 @@
                         {{order.shipTo.city}}, {{order.shipTo.state}} {{order.shipTo.postal_code}} {{order.shipTo.country}}<br/>
                         </div>
                     </mj-text>
+                    <mj-raw>
+                        <div itemprop="customer" itemscope itemtype="http://schema.org/Person">
+                            <meta itemprop="name" content="{{order.shipTo.firstName}} {{order.shipTo.lastName}}"/>
+                        </div>
+                        <div itemprop="billingAddress" itemscope itemtype="http://schema.org/PostalAddress">
+                            <meta itemprop="name" content="{{order.shipTo.firstName}} {{order.shipTo.lastName}}"/>
+                            <meta itemprop="streetAddress" content="{{order.shipTo.addressFormatted}}"/>
+                            <meta itemprop="addressLocality" content="{{order.shipTo.city}}"/>
+                            <meta itemprop="addressRegion" content="{{order.shipTo.state}}"/>
+                            <meta itemprop="addressCountry" content="{{order.shipTo.country}}"/>
+                        </div>
+                        </mj-raw>
             </mj-column>
             <mj-column width="40%" vertical-align="top" padding-bottom="20px">
                     <mj-text font-size="14px" color="#000000" text-transform="capitalize" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
@@ -79,6 +99,21 @@
                         Qty: {{this.qty}}
                     </div>
                 </mj-text>
+                <mj-raw>
+                    <div itemprop="acceptedOffer" itemscope itemtype="http://schema.org/Offer">
+                        <div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product">
+                            <meta itemprop="name" content="{{this.title}}"/>
+                            <meta itemprop="sku" content="{{this.sku}}"/>
+                            <link itemprop="url" href="https://www.bootbarn.com/go/{{this.itemNumber}}"/>
+                            <link itemprop="image" href="https:{{this.image}}"/>
+                        </div>
+                        <meta itemprop="price" content="{{this.price}}"/>
+                        <meta itemprop="priceCurrency" content="USD"/>
+                        <div itemprop="eligibleQuantity" itemscope itemtype="http://schema.org/QuantitativeValue">
+                            <meta itemprop="value" content="{{this.qty}}"/>
+                        </div>
+                    </div>
+                </mj-raw>
             </mj-column>
             <mj-column width="100px" padding-left="10px" padding-right="10px">
                 <mj-text padding-left="0" padding-right="0" letter-spacing="1px" font-size="16px" text-transform="uppercase"> {{this.priceFormatted}} </mj-text>
@@ -97,6 +132,12 @@
                 <mj-text>Discount : -{{order.totalDiscountFormatted}}</mj-text>
                 <mj-text>Total : {{order.totalFormatted}}</mj-text>
             </mj-column>
+            <mj-raw>
+                <meta itemprop="priceCurrency" content="USD"/>
+                <meta itemprop="price" content="{{order.total}}"/>
+                <meta itemprop="orderDate" content="{{order.orderDate}}"/>
+                <meta itemprop="discount" content="{{order.totalDiscount}}"/>
+            </mj-raw>
         </mj-section>
 
         <mj-section background-color="#ffffff">
@@ -109,7 +150,7 @@
                     <mj-raw>{{#each order.productRecommendations}}</mj-raw>
                     <div style="display:inline-block;width:30%;vertical-align:top">
                         <a href="https://www.bootbarn.com{{this.url}}?utm_source=order%20confirmation&amp;utm_medium=temail&amp;utm_term=ProductRecommendation&amp;utm_content=ProductRecommendation">
-                            <img src="{{this.imageUrl}}" width="100%"/>
+                            <img src="{{this.imageUrl}}" width="180"/>
                         </a>
                         <div style="text-align:left">{{this.name}}</div>
                         <div style="text-align:left;color:red">${{this.displayPrice}}</div>
@@ -165,6 +206,7 @@
             </mj-column>
         </mj-section>
 
+        <mj-raw></div></mj-raw>
     </mj-wrapper>
     </mj-body>
 </mjml>
