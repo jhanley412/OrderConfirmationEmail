@@ -2,16 +2,16 @@
     <mj-body background-color="#ffffff" font-size="13px">
     <mj-wrapper border="1px solid #000" padding="0px">
 
-        <mj-section background-color="#fff" padding-bottom="10px" padding-top="10px" border-top="10px solid #e3dfd6" border-bottom="2px solid #000">
+        <mj-section background-color="#fff" padding-bottom="10px" padding-top="10px" >
             <mj-column width="50%">
                 <mj-image src="https://d2aovoe6slpue4.cloudfront.net/stores/bb-logo.png" alt="BootBarn.com"></mj-image>
             </mj-column>
         </mj-section>
 
         <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
-            <mj-column width="90%">
-                <mj-text font-size="13px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
-                <p style="font-size:16px;">Hi {{order.soldTo.firstName}} {{order.soldTo.lastName}}</p>
+            <mj-column width="90%" border-top="2px solid #e3dfd6">
+                <mj-text font-size="13px" color="#000000" text-transform="capitalize" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
+                <p style="font-size:16px;text-transform:capitalize;">Hi <span style="text-transform:lowercase;"> {{order.soldTo.firstName}} {{order.soldTo.lastName}} </span>,</p>
                 <p style="font-size:16px;">Thank you for your order!</p>
                 <p style="font-size:16px;">We'll follow up with another email once your items have shipped. Thank you for shopping with us!</p>
                 </mj-text>
@@ -34,15 +34,16 @@
 
         <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
             <mj-column width="90%"  border-top="2px solid #e3dfd6" border-bottom="2px solid #e3dfd6">
-                    <mj-text align="center" font-size="16px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
+                    <mj-text align="center" text-transform="capitalize" font-size="16px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
                         <p style="font-size:16px;">Order Number: {{order.orderNumber}}</p>
                     </mj-text>
+                    
             </mj-column>
         </mj-section>
 
         <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="10px">
             <mj-column width="40%" vertical-align="top" padding-bottom="20px">
-                    <mj-text font-size="14px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
+                    <mj-text font-size="14px" color="#000000" text-transform="capitalize" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
                         <div style="font-weight:bold"><mj-text font-weight="400" font-size="16px">Ship To:</mj-text></div>
                         <div>
                         {{order.shipTo.firstName}} {{order.shipTo.lastName}}<br/>
@@ -52,7 +53,7 @@
                     </mj-text>
             </mj-column>
             <mj-column width="40%" vertical-align="top" padding-bottom="20px">
-                    <mj-text font-size="14px" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
+                    <mj-text font-size="14px" color="#000000" text-transform="capitalize" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="0px">
                         <div style="font-weight:bold"><mj-text font-weight="400" font-size="16px">Bill To:</mj-text></div>
                         <div>
                         {{order.soldTo.firstName}} {{order.soldTo.lastName}}<br/>
@@ -85,11 +86,11 @@
         </mj-section>
         <mj-raw>{{/each}}</mj-raw>
 
-        <mj-section background-color="#ffffff" padding-bottom="10px" padding-top="10px" border-top="5px solid #e3dfd6" >
+        <mj-section background-color="#ffffff" padding-bottom="10px" padding-top="10px" border-top="2px solid #e3dfd6"  text-align="right">
             <mj-column width="50%">
                 <mj-text padding-left="0" padding-right="0" letter-spacing="1.2px" font-size="19px" font-weight="bold" text-transform="uppercase"> &nbsp; </mj-text>
             </mj-column>
-            <mj-column width="50%">
+            <mj-column width="50%" >
                 <mj-text>Subtotal : {{order.subtotalFormatted}}</mj-text>
                 <mj-text>Shipping : {{order.totalShippingFormatted}}</mj-text>
                 <mj-text>Tax : {{order.totalTaxFormatted}}</mj-text>
@@ -105,7 +106,7 @@
                         <span style="background-color:#ffffff;display:inline-block;padding:1em">You may also like</span>
                     </div>
 
-                    <mj-raw>{{#each ProductRecommendations}}</mj-raw>
+                    <mj-raw>{{#each order.productRecommendations}}</mj-raw>
                     <div style="display:inline-block;width:30%;vertical-align:top">
                         <a href="https://www.bootbarn.com{{this.url}}?utm_source=order%20confirmation&amp;utm_medium=temail&amp;utm_term=ProductRecommendation&amp;utm_content=ProductRecommendation">
                             <img src="{{this.imageUrl}}" width="100%"/>
@@ -119,43 +120,47 @@
             </mj-column>
         </mj-section>
 
-        <mj-section background-color="#ffffff" background-repeat="no-repeat" background-size="cover" background-url="https://d1yvdgbmeqok5q.cloudfront.net/bootbarn/img/order-confirmation-email/2018_07-Web-Assets_dresses_Bslot2.jpg">
-            <mj-column width="80%" border="10px solid #ffffff" background-color="#ffffff"  >
+        <mj-section background-color="#ffffff" background-repeat="no-repeat" background-size="cover" background-url="https://d1yvdgbmeqok5q.cloudfront.net/bootbarn/img/order-confirmation-email/brewards-background.jpg">
+
+            <mj-column width="80%" background-color="rgba(255,255,255,0.7)"  >
                 <mj-text align="center" text-transform="uppercase" >
                     <div style="font-size:18px;font-weight:bold">B-Rewards Loyalty Program</div>
                 </mj-text>
                 <mj-text align="center">
-                    <p>
+                    
                     Recieve exclusive discounts promotions and more from BootBarn<br/>
                     Get 150 pts just for signing up
-                    </p>
+                    
                 </mj-text>
-
-                <mj-button background-color="#9b1a30" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://www.bootbarn.com/account?utm_source=order%20confirmation&amp;utm_medium=temaill&amp;utm_term=BRewardedSignIn&amp;utm_content=BRewardedSignIn" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px"
-                    padding-top="10px">Sign In</mj-button>
-                <mj-button background-color="#9b1a30" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://www.bootbarn.com/enrollrewards?utm_source=order%20confirmation&amp;utm_medium=temail&amp;utm_term=BRewardedJoinNow&amp;utm_content=BRewardedJoinNow" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px"
-                    padding-top="10px">Join Now</mj-button>
             </mj-column>
+            <mj-column width="40%" background-color="rgba(255,255,255,0.7)"  >
+                    <mj-button background-color="#9b1a30" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://www.bootbarn.com/account?utm_source=order%20confirmation&amp;utm_medium=temaill&amp;utm_term=BRewardedSignIn&amp;utm_content=BRewardedSignIn" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10px">Sign In</mj-button>
+            </mj-column>
+            <mj-column width="40%" background-color="rgba(255,255,255,0.7)" >
+                    <mj-button background-color="#9b1a30" color="#FFF" font-size="14px" align="center" font-weight="bold" border="none" padding="15px 30px" border-radius="10px" href="https://www.bootbarn.com/enrollrewards?utm_source=order%20confirmation&amp;utm_medium=temail&amp;utm_term=BRewardedJoinNow&amp;utm_content=BRewardedJoinNow" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10px">Join Now</mj-button>
+            </mj-column>
+            
         </mj-section>
 
         <mj-section background-color="#ffffff" padding-bottom="5px" padding-top="10px">
             <mj-column width="100%" >
                 <mj-divider border-color="#6c4041" border-width="2px" border-style="solid" padding-left="20px" padding-right="20px" padding-bottom="0px" padding-top="0"></mj-divider>
-                <mj-social font-size="15px" icon-size="30px" mode="horizontal">
+                <mj-social font-size="15px" icon-size="40px" border-radius="10px" inner-padding = "10px" mode="horizontal">
                     <mj-social-element name="facebook" href="https://www.facebook.com/BootBarn">
-                    Facebook
                     </mj-social-element>
                     <mj-social-element name="instagram" href="https://www.instagram.com/boot_barn_official/">
-                    Instagram
                     </mj-social-element>
                     <mj-social-element  name="twitter" href="https://twitter.com/bootbarn">
-                    Twitter
                     </mj-social-element>
                 </mj-social>
-                <mj-text align="center" color="#6c4041" font-size="15px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
+                <mj-text align="center" color="#6c4041" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10px">
                     <div style="font-size:15px">Thank You!</div>
+                    <br>
                     <div style="font-size:15px"><a href="mailto:custserv@bootbarn.com">custserv@bootbarn.com</a></div>
                     <div style="font-size:15px"><a href="tel:18884402668">1-888-440-2668</a></div>
+                    <div style="font-size:15px">15345 Barranca Parkway Irvine, CA 92618</div>
+                    <br><br>
+                    <div style="font-size:12px"><a href="{{unsubscribe_url}}"">Unsubscribe</a></div>
                 </mj-text>
             </mj-column>
         </mj-section>
